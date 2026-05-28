@@ -90,7 +90,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
-getRedirectResult
+onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
@@ -119,22 +119,15 @@ loginBtn.addEventListener("click", () => {
     });
 
 });
+onAuthStateChanged(auth, (user) => {
 
-getRedirectResult(auth)
-  .then((result) => {
+  if (user) {
 
-  if (result && result.user) {
+    alert("Welcome " + user.displayName);
 
-      alert("Welcome " + result.user.displayName);
+  }
 
-    }
-
-  })
-  .catch((error) => {
-
-    alert(error.message);
-
-  });
+});
 </script>
 </body>
 </html>
