@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Signup - Creator Hub</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white flex items-center justify-center h-screen">
+
+  <div class="bg-gray-900 p-8 rounded-2xl w-96">
+
+    <h1 class="text-4xl font-bold text-cyan-400 text-center">
+      Create Account
+    </h1>
+
+    <input
+      id="email"
+      type="email"
+      placeholder="Enter Email"
+      class="w-full mt-8 p-4 rounded-xl text-black"
+    >
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Enter Password"
+      class="w-full mt-4 p-4 rounded-xl text-black"
+    >
+
+    <button
+      id="signupBtn"
+      class="w-full bg-cyan-500 mt-6 p-4 rounded-xl font-bold">
+      Sign Up
+    </button>
+
+    <p class="text-center mt-6 text-gray-400">
+      Already have account?
+
+      <a href="login.html" class="text-cyan-400">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
