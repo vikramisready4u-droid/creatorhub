@@ -62,6 +62,31 @@
 
 </div>
 
+<div class="mt-20 bg-gray-900 p-8 rounded-2xl">
+
+  <h2 class="text-3xl font-bold text-cyan-400">
+    AI Script Generator
+  </h2>
+
+  <input
+    id="topicInput"
+    type="text"
+    placeholder="Enter video topic..."
+    class="w-full p-4 rounded-xl text-black mt-6"
+  >
+
+  <button
+    id="generateBtn"
+    class="bg-cyan-500 px-6 py-3 rounded-xl mt-6">
+    Generate Script
+  </button>
+
+  <div
+    id="scriptOutput"
+    class="mt-6 text-gray-300 whitespace-pre-line">
+  </div>
+
+</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
 
   <div class="bg-gray-900 p-6 rounded-2xl">
@@ -129,7 +154,11 @@ const password = document.getElementById("password");
 const signupBtn = document.getElementById("signupBtn");
 
 const loginBtn = document.getElementById("loginBtn");
+const topicInput = document.getElementById("topicInput");
 
+const generateBtn = document.getElementById("generateBtn");
+
+const scriptOutput = document.getElementById("scriptOutput");
 
 // SIGN UP
 
@@ -177,6 +206,34 @@ loginBtn.addEventListener("click", () => {
     alert(error.message);
 
   });
+
+});
+generateBtn.addEventListener("click", () => {
+
+  const topic = topicInput.value;
+
+  scriptOutput.innerHTML = `
+
+🔥 Viral Hook:
+"${topic} changed my life in 7 days..."
+
+🎬 Reel Script:
+
+Day 1:
+I started learning about ${topic}.
+
+Day 3:
+I realized most people do this WRONG.
+
+Day 5:
+I tested secret strategies nobody talks about.
+
+Day 7:
+The results shocked me.
+
+📈 CTA:
+Follow for more viral AI creator tips.
+  `;
 
 });
 onAuthStateChanged(auth, (user) => {
