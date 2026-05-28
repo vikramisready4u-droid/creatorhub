@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creator Hub</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-black text-white">
+
+  <nav class="flex justify-between items-center p-5 bg-gray-900">
+    <h1 class="text-2xl font-bold text-cyan-400">
+      Creator Hub
+    </h1>
+
+    <button class="bg-cyan-500 px-4 py-2 rounded-xl">
+      Login
+    </button>
+  </nav>
+
+  <section class="text-center mt-32 px-5">
+
+    <h2 class="text-5xl font-bold leading-tight">
+      The Ultimate AI Platform <br>
+      For Content Creators
+    </h2>
+
+    <p class="text-gray-400 mt-6 text-lg">
+      Generate scripts, captions, hashtags,
+      thumbnails and viral ideas using AI.
+    </p>
+
+  <button 
+  id="loginBtn"
+  class="bg-cyan-500 px-4 py-2 rounded-xl">
+  Google Login
+</button>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+
+  <div class="bg-gray-900 p-6 rounded-2xl">
+    <h3 class="text-2xl font-bold text-cyan-400">
+      AI Script Writer
+    </h3>
+
+    <p class="text-gray-400 mt-3">
+      Generate viral reel and YouTube scripts instantly.
+    </p>
+  </div>
+
+  <div class="bg-gray-900 p-6 rounded-2xl">
+    <h3 class="text-2xl font-bold text-cyan-400">
+      Caption Generator
+    </h3>
+
+    <p class="text-gray-400 mt-3">
+      Create engaging captions and hashtags using AI.
+    </p>
+  </div>
+
+  <div class="bg-gray-900 p-6 rounded-2xl">
+    <h3 class="text-2xl font-bold text-cyan-400">
+      Trend Finder
+    </h3>
+
+    <p class="text-gray-400 mt-3">
+      Discover trending content ideas before others.
+    </p>
+  </div>
+
+</div>
+  </section>
+
+<script type="module">
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDApiD62ZobtpOkoutak1SGwuXlwW0GDuo",
+    authDomain: "creatorhub-9fc3d.firebaseapp.com",
+    projectId: "creatorhub-9fc3d",
+    storageBucket: "creatorhub-9fc3d.firebasestorage.app",
+    messagingSenderId: "578610723202",
+    appId: "1:578610723202:web:b38098afdd75c7268f779b"
+  };
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithRedirect
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+
+const loginBtn = document.getElementById("loginBtn");
+
+
+loginBtn.addEventListener("click", () => {
+
+  signInWithRedirect(auth, provider)
+    .then((result) => {
+
+      alert("Welcome " + result.user.displayName);
+
+    })
+    .catch((error) => {
+
+      alert(error.message);
+
+    });
+
+});
+
+
+</script>
+</body>
+</html>
