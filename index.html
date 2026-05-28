@@ -114,7 +114,24 @@ onAuthStateChanged(auth, (user) => {
 
   if (user) {
 
-    alert("Welcome " + user.displayName);
+    document.body.innerHTML = `
+  <div class="h-screen flex flex-col items-center justify-center bg-black text-white">
+
+    <h1 class="text-5xl font-bold text-cyan-400">
+      Welcome
+    </h1>
+
+    <p class="mt-6 text-2xl">
+      ${user.displayName}
+    </p>
+
+    <img 
+      src="${user.photoURL}" 
+      class="w-24 h-24 rounded-full mt-6"
+    >
+
+  </div>
+`;
 
   }
 
