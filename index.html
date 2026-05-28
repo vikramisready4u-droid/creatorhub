@@ -32,11 +32,35 @@
       thumbnails and viral ideas using AI.
     </p>
 
-  <button 
-  id="loginBtn"
-  class="bg-cyan-500 px-4 py-2 rounded-xl">
-  Google Login
-</button>
+<div class="mt-10 flex flex-col items-center gap-4">
+
+  <input
+    id="email"
+    type="email"
+    placeholder="Enter Email"
+    class="p-3 rounded-xl text-black w-80"
+  >
+
+  <input
+    id="password"
+    type="password"
+    placeholder="Enter Password"
+    class="p-3 rounded-xl text-black w-80"
+  >
+
+  <button
+    id="signupBtn"
+    class="bg-cyan-500 px-6 py-3 rounded-xl w-80">
+    Sign Up
+  </button>
+
+  <button
+    id="loginBtn"
+    class="bg-green-500 px-6 py-3 rounded-xl w-80">
+    Login
+  </button>
+
+</div>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
 
@@ -88,9 +112,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import {
   getAuth,
-  GoogleAuthProvider,
-  signInWithRedirect,
-onAuthStateChanged
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
@@ -98,16 +122,61 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider();
+const email = document.getElementById("email");
 
+const password = document.getElementById("password");
+
+const signupBtn = document.getElementById("signupBtn");
 
 const loginBtn = document.getElementById("loginBtn");
 
 
+// SIGN UP
+
+signupBtn.addEventListener("click", () => {
+
+  createUserWithEmailAndPassword(
+    auth,
+    email.value,
+    password.value
+  )
+
+  .then(() => {
+
+    alert("Account Created");
+
+  })
+
+  .catch((error) => {
+
+    alert(error.message);
+
+  });
+
+});
+
+
+// LOGIN
+
 loginBtn.addEventListener("click", () => {
 
-  signInWithRedirect(auth, provider)
+  signInWithEmailAndPassword(
+    auth,
+    email.value,
+    password.value
+  )
 
+  .then(() => {
+
+    alert("Login Successful");
+
+  })
+
+  .catch((error) => {
+
+    alert(error.message);
+
+  });
 
 });
 onAuthStateChanged(auth, (user) => {
