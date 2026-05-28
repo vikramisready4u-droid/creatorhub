@@ -194,11 +194,24 @@ onAuthStateChanged(auth, (user) => {
       ${user.email}
     </p>
 
-
+<button
+  id="logoutBtn"
+  class="mt-8 bg-red-500 px-6 py-3 rounded-xl">
+  Logout
+</button>
 
   </div>
 `;
 
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", () => {
+
+  auth.signOut();
+
+  location.reload();
+
+});
   }
 
 });
