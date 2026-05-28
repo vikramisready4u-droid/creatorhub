@@ -123,7 +123,7 @@ loginBtn.addEventListener("click", () => {
 getRedirectResult(auth)
   .then((result) => {
 
-    if (result.user) {
+  if (result && result.user) {
 
       alert("Welcome " + result.user.displayName);
 
