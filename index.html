@@ -89,7 +89,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithRedirect
+  signInWithRedirect,
+getRedirectResult
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 
@@ -119,7 +120,21 @@ loginBtn.addEventListener("click", () => {
 
 });
 
+getRedirectResult(auth)
+  .then((result) => {
 
+    if (result.user) {
+
+      alert("Welcome " + result.user.displayName);
+
+    }
+
+  })
+  .catch((error) => {
+
+    alert(error.message);
+
+  });
 </script>
 </body>
 </html>
