@@ -3,275 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Creator Hub</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
+
 <body class="bg-black text-white">
 
-  <nav class="flex justify-between items-center p-5 bg-gray-900">
-    <h1 class="text-2xl font-bold text-cyan-400">
+  <!-- Navbar -->
+
+  <nav class="flex justify-between items-center p-6 bg-gray-900">
+
+    <h1 class="text-3xl font-bold text-cyan-400">
       Creator Hub
     </h1>
 
-    <button class="bg-cyan-500 px-4 py-2 rounded-xl">
-      Login
-    </button>
+    <div class="flex gap-4">
+
+      <a
+        href="login.html"
+        class="bg-gray-800 px-5 py-2 rounded-xl">
+        Login
+      </a>
+
+      <a
+        href="signup.html"
+        class="bg-cyan-500 px-5 py-2 rounded-xl">
+        Sign Up
+      </a>
+
+    </div>
+
   </nav>
 
-  <section class="text-center mt-32 px-5">
 
-    <h2 class="text-5xl font-bold leading-tight">
-      The Ultimate AI Platform <br>
-      For Content Creators
+  <!-- Hero Section -->
+
+  <section class="text-center mt-32 px-6">
+
+    <h2 class="text-6xl font-bold leading-tight">
+
+      AI Tools For <br>
+      Modern Content Creators
+
     </h2>
 
-    <p class="text-gray-400 mt-6 text-lg">
-      Generate scripts, captions, hashtags,
-      thumbnails and viral ideas using AI.
+    <p class="text-gray-400 mt-8 text-xl max-w-2xl mx-auto">
+
+      Generate viral scripts, captions,
+      hashtags, thumbnails and trending ideas
+      using powerful AI tools.
+
     </p>
 
-<div class="mt-10 flex flex-col items-center gap-4">
+    <div class="mt-10 flex justify-center gap-6">
 
-  <input
-    id="email"
-    type="email"
-    placeholder="Enter Email"
-    class="p-3 rounded-xl text-black w-80"
-  >
+      <a
+        href="signup.html"
+        class="bg-cyan-500 px-8 py-4 rounded-2xl text-lg font-bold">
 
-  <input
-    id="password"
-    type="password"
-    placeholder="Enter Password"
-    class="p-3 rounded-xl text-black w-80"
-  >
+        Get Started
 
-  <button
-    id="signupBtn"
-    class="bg-cyan-500 px-6 py-3 rounded-xl w-80">
-    Sign Up
-  </button>
+      </a>
 
-  <button
-    id="loginBtn"
-    class="bg-green-500 px-6 py-3 rounded-xl w-80">
-    Login
-  </button>
+      <a
+        href="login.html"
+        class="bg-gray-800 px-8 py-4 rounded-2xl text-lg">
 
-</div>
+        Login
 
-<div class="mt-20 bg-gray-900 p-8 rounded-2xl">
+      </a>
 
-  <h2 class="text-3xl font-bold text-cyan-400">
-    AI Script Generator
-  </h2>
+    </div>
 
-  <input
-    id="topicInput"
-    type="text"
-    placeholder="Enter video topic..."
-    class="w-full p-4 rounded-xl text-black mt-6"
-  >
-
-  <button
-    id="generateBtn"
-    class="bg-cyan-500 px-6 py-3 rounded-xl mt-6">
-    Generate Script
-  </button>
-
-  <div
-    id="scriptOutput"
-    class="mt-6 text-gray-300 whitespace-pre-line">
-  </div>
-
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-
-  <div class="bg-gray-900 p-6 rounded-2xl">
-    <h3 class="text-2xl font-bold text-cyan-400">
-      AI Script Writer
-    </h3>
-
-    <p class="text-gray-400 mt-3">
-      Generate viral reel and YouTube scripts instantly.
-    </p>
-  </div>
-
-  <div class="bg-gray-900 p-6 rounded-2xl">
-    <h3 class="text-2xl font-bold text-cyan-400">
-      Caption Generator
-    </h3>
-
-    <p class="text-gray-400 mt-3">
-      Create engaging captions and hashtags using AI.
-    </p>
-  </div>
-
-  <div class="bg-gray-900 p-6 rounded-2xl">
-    <h3 class="text-2xl font-bold text-cyan-400">
-      Trend Finder
-    </h3>
-
-    <p class="text-gray-400 mt-3">
-      Discover trending content ideas before others.
-    </p>
-  </div>
-
-</div>
   </section>
 
-<script type="module">
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDApiD62ZobtpOkoutak1SGwuXlwW0GDuo",
-    authDomain: "creatorhub-9fc3d.firebaseapp.com",
-    projectId: "creatorhub-9fc3d",
-    storageBucket: "creatorhub-9fc3d.firebasestorage.app",
-    messagingSenderId: "578610723202",
-    appId: "1:578610723202:web:b38098afdd75c7268f779b"
-  };
+  <!-- Features -->
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 p-10 mt-32">
 
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    <div class="bg-gray-900 p-8 rounded-2xl">
 
+      <h3 class="text-2xl font-bold text-cyan-400">
+        AI Script Writer
+      </h3>
 
-const app = initializeApp(firebaseConfig);
+      <p class="text-gray-400 mt-4">
 
-const auth = getAuth(app);
+        Generate viral YouTube and Instagram scripts instantly.
 
-const email = document.getElementById("email");
+      </p>
 
-const password = document.getElementById("password");
+    </div>
 
-const signupBtn = document.getElementById("signupBtn");
+    <div class="bg-gray-900 p-8 rounded-2xl">
 
-const loginBtn = document.getElementById("loginBtn");
-const topicInput = document.getElementById("topicInput");
+      <h3 class="text-2xl font-bold text-cyan-400">
+        Caption Generator
+      </h3>
 
-const generateBtn = document.getElementById("generateBtn");
+      <p class="text-gray-400 mt-4">
 
-const scriptOutput = document.getElementById("scriptOutput");
+        Create engaging captions and hashtags using AI.
 
-// SIGN UP
+      </p>
 
-signupBtn.addEventListener("click", () => {
+    </div>
 
-  createUserWithEmailAndPassword(
-    auth,
-    email.value,
-    password.value
-  )
+    <div class="bg-gray-900 p-8 rounded-2xl">
 
-  .then(() => {
+      <h3 class="text-2xl font-bold text-cyan-400">
+        Trend Finder
+      </h3>
 
-    alert("Account Created");
+      <p class="text-gray-400 mt-4">
 
-  })
+        Discover trending content ideas before everyone else.
 
-  .catch((error) => {
+      </p>
 
-    alert(error.message);
+    </div>
 
-  });
+  </section>
 
-});
-
-
-// LOGIN
-
-loginBtn.addEventListener("click", () => {
-
-  signInWithEmailAndPassword(
-    auth,
-    email.value,
-    password.value
-  )
-
-  .then(() => {
-
-    alert("Login Successful");
-
-  })
-
-  .catch((error) => {
-
-    alert(error.message);
-
-  });
-
-});
-generateBtn.addEventListener("click", () => {
-
-  const topic = topicInput.value;
-
-  scriptOutput.innerHTML = `
-
-🔥 Viral Hook:
-"${topic} changed my life in 7 days..."
-
-🎬 Reel Script:
-
-Day 1:
-I started learning about ${topic}.
-
-Day 3:
-I realized most people do this WRONG.
-
-Day 5:
-I tested secret strategies nobody talks about.
-
-Day 7:
-The results shocked me.
-
-📈 CTA:
-Follow for more viral AI creator tips.
-  `;
-
-});
-onAuthStateChanged(auth, (user) => {
-
-  if (user) {
-
-    document.body.innerHTML = `
-  <div class="h-screen flex flex-col items-center justify-center bg-black text-white">
-
-    <h1 class="text-5xl font-bold text-cyan-400">
-      Welcome
-    </h1>
-
-    <p class="mt-6 text-2xl">
-      ${user.email}
-    </p>
-
-<button
-  id="logoutBtn"
-  class="mt-8 bg-red-500 px-6 py-3 rounded-xl">
-  Logout
-</button>
-
-  </div>
-`;
-
-const logoutBtn = document.getElementById("logoutBtn");
-
-logoutBtn.addEventListener("click", () => {
-
-  auth.signOut();
-
-  location.reload();
-
-});
-  }
-
-});
-</script>
 </body>
 </html>
