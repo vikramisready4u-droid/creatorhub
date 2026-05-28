@@ -107,16 +107,7 @@ const loginBtn = document.getElementById("loginBtn");
 loginBtn.addEventListener("click", () => {
 
   signInWithRedirect(auth, provider)
-    .then((result) => {
 
-      alert("Welcome " + result.user.displayName);
-
-    })
-    .catch((error) => {
-
-      alert(error.message);
-
-    });
 
 });
 onAuthStateChanged(auth, (user) => {
