@@ -150,3 +150,43 @@ if (logoutBtn) {
   });
 
 }
+// AI SCRIPT GENERATOR
+
+const generateBtn =
+  document.getElementById("generateBtn");
+
+if (generateBtn) {
+
+  generateBtn.addEventListener("click", () => {
+
+    const topic =
+      document.getElementById("topicInput").value;
+
+    const output =
+      document.getElementById("scriptOutput");
+
+    if (!topic) {
+
+      output.innerText =
+        "Please enter a topic.";
+
+      return;
+    }
+
+    output.innerText =
+`🔥 Hook:
+Nobody talks about ${topic}, but they should.
+
+🎬 Script:
+Today I'm going to show you how ${topic} can help creators grow faster.
+
+Step 1: Understand the basics.
+Step 2: Apply it consistently.
+Step 3: Track results and improve.
+
+📢 CTA:
+Follow for more creator tips.`;
+
+  });
+
+}
