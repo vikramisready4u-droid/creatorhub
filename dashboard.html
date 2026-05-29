@@ -53,9 +53,10 @@
 
     <div class="flex-1 p-10">
 
-      <h2 class="text-5xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-        Welcome Creator 🚀
-      </h2>
+      <h2 id="greeting"
+class="text-5xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+Loading...
+</h2>
 
       <p
         id="userEmail"
@@ -94,6 +95,31 @@
 
   </div>
 
+<script>
+const hour = new Date().getHours();
+
+let greeting = "";
+
+if(hour < 12){
+  greeting = "Good Morning ☀️";
+}
+else if(hour < 17){
+  greeting = "Good Afternoon 🌤️";
+}
+else if(hour < 21){
+  greeting = "Good Evening 🌆";
+}
+else{
+  greeting = "Good Night 🌙";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("greeting");
+  if(el){
+    el.textContent = greeting + ", Creator 👋";
+  }
+});
+</script>
 <script type="module" src="app.js"></script>
 </body>
 </html>
