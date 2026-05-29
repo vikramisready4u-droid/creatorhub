@@ -7,13 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-slate-950 text-white">
 
   <div class="flex">
 
-    <div class="w-64 h-screen bg-gray-900 p-6">
+    <div class="w-72 h-screen bg-slate-900 border-r border-slate-800 p-6">
 
-      <h1 class="text-3xl font-bold text-cyan-400">
+      <h1 class="text-3xl font-bold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
         Creator Hub
       </h1>
 
@@ -23,7 +23,7 @@
           Dashboard
         </a>
 
-        <a href="ai.html" class="bg-cyan-500 p-3 rounded-xl">
+        <a href="ai.html" class="bg-gradient-to-r from-violet-600 to-fuchsia-600 p-3 rounded-xl">
           AI Tools
         </a>
 
@@ -33,7 +33,7 @@
 
     <div class="flex-1 p-10">
 
-      <h2 class="text-5xl font-bold">
+      <h2 class="text-5xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
         AI Script Generator
       </h2>
 
@@ -41,18 +41,18 @@
         id="topicInput"
         type="text"
         placeholder="Enter video topic..."
-        class="w-full p-4 rounded-xl text-black mt-8"
+        class="w-full p-4 rounded-2xl bg-slate-800 text-white mt-8 border border-slate-700"
       >
 
       <button
         id="generateBtn"
-        class="bg-cyan-500 px-6 py-3 rounded-xl mt-6">
+        class="bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 rounded-2xl mt-6 font-bold">
         Generate
       </button>
 
       <div
         id="scriptOutput"
-        class="mt-8 bg-gray-900 p-6 rounded-xl whitespace-pre-line">
+        class="mt-8 bg-slate-900 border border-slate-800 p-6 rounded-3xl whitespace-pre-line min-h-[250px]">
       </div>
 
     </div>
