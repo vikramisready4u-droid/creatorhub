@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools - Creator Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+
+  <div class="flex">
+
+    <div class="w-64 h-screen bg-gray-900 p-6">
+
+      <h1 class="text-3xl font-bold text-cyan-400">
+        Creator Hub
+      </h1>
+
+      <div class="mt-10 flex flex-col gap-4">
+
+        <a href="dashboard.html" class="bg-gray-800 p-3 rounded-xl">
+          Dashboard
+        </a>
+
+        <a href="ai.html" class="bg-cyan-500 p-3 rounded-xl">
+          AI Tools
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="flex-1 p-10">
+
+      <h2 class="text-5xl font-bold">
+        AI Script Generator
+      </h2>
+
+      <input
+        id="topicInput"
+        type="text"
+        placeholder="Enter video topic..."
+        class="w-full p-4 rounded-xl text-black mt-8"
+      >
+
+      <button
+        id="generateBtn"
+        class="bg-cyan-500 px-6 py-3 rounded-xl mt-6">
+        Generate
+      </button>
+
+      <div
+        id="scriptOutput"
+        class="mt-8 bg-gray-900 p-6 rounded-xl whitespace-pre-line">
+      </div>
+
+    </div>
+
+  </div>
+
+<script type="module" src="app.js"></script>
+<script>
+const topicInput = document.getElementById("topicInput");
+const generateBtn = document.getElementById("generateBtn");
+const scriptOutput = document.getElementById("scriptOutput");
+
+generateBtn.addEventListener("click", () => {
+
+  const topic = topicInput.value.trim();
+
+  if (!topic) {
+    scriptOutput.innerText = "Please enter a topic.";
+    return;
+  }
+
+  scriptOutput.innerText = `
+🔥 Hook:
+Nobody talks about ${topic}, but they should.
+
+🎬 Script:
+Today I'm going to show you how ${topic} can help creators grow faster.
+
+Step 1: Understand the basics.
+Step 2: Apply it consistently.
+Step 3: Track results and improve.
+
+📢 CTA:
+Follow for more creator tips.
+`;
+
+});
+</script>
+</body>
+</html>
