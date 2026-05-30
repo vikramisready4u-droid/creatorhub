@@ -35,6 +35,10 @@ const signupBtn = document.getElementById("signupBtn");
 if (signupBtn) {
 
   signupBtn.addEventListener("click", () => {
+    signupBtn.innerText =
+"📝 Creating Account...";
+
+signupBtn.disabled = true;
 
     const email =
       document.getElementById("email").value;
@@ -75,11 +79,15 @@ if (loginBtn) {
 
   loginBtn.addEventListener("click", () => {
 
-    const email =
+  const email =
       document.getElementById("email").value;
 
-    const password =
+  const password =
       document.getElementById("password").value;
+
+  loginBtn.innerText = "🔐 Logging In...";
+  loginBtn.disabled = true;
+
 
     signInWithEmailAndPassword(
       auth,
@@ -102,8 +110,36 @@ if (loginBtn) {
   });
 
 }
+import {
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+const googleProvider = new GoogleAuthProvider();
+const googleBtn =
+document.getElementById("googleBtn");
 
+if (googleBtn) {
 
+  googleBtn.addEventListener("click", () => {
+
+    signInWithPopup(auth, googleProvider)
+
+    .then(() => {
+
+      window.location.href =
+      "dashboard.html";
+
+    })
+
+    .catch((error) => {
+
+      alert(error.message);
+
+    });
+
+  });
+
+}
 // DASHBOARD PROTECTION
 
 const userEmail =
