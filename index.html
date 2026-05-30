@@ -1,134 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <title>Creator Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<title>Creator Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+font-family:'Poppins',sans-serif;
+}
+
+.glow{
+box-shadow:0 0 30px rgba(168,85,247,.5);
+}
+
+.hero-bg{
+background:
+radial-gradient(circle at top left,#7c3aed33,transparent 40%),
+radial-gradient(circle at top right,#ec489933,transparent 40%),
+#020617;
+}
+</style>
+
 </head>
 
-<body class="bg-slate-950 text-white" style="font-family:Poppins,sans-serif;">
+<body class="hero-bg text-white min-h-screen">
 
-  <!-- Navbar -->
+<!-- Popup -->
 
-    <h1 class="text-5xl font-bold text-center mt-8 bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-      Creator Hub
-    </h1>
-  <!-- Hero Section -->
-
-  <section class="text-center mt-32 px-6">
-
-    <h2 class="text-6xl font-bold leading-tight">
-
-      Create Viral Content <br>
-With AI Power
-
-    </h2>
-
-    <p class="text-gray-400 mt-8 text-xl max-w-2xl mx-auto">
-
-      Generate viral scripts, captions,
-      hashtags, thumbnails and trending ideas
-      using powerful AI tools.
-
-    </p>
-
-    <div class="mt-10 flex justify-center gap-6">
-
-      <a
-        href="signup.html"
-        class="bg-cyan-500 px-8 py-4 rounded-2xl text-lg font-bold">
-
-        🚀 Get Started
-
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- Features -->
-
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-8 p-10 mt-32">
-
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl">
-
-      <h3 class="text-2xl font-bold text-cyan-400">
-        🎬 Script Generator
-      </h3>
-
-      <p class="text-gray-400 mt-4">
-
-        Generate viral YouTube Shorts scripts with AI.
-
-      </p>
-
-    </div>
-
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl">
-
-      <h3 class="text-2xl font-bold text-cyan-400">
-        ⚡ Hook Generator
-      </h3>
-
-      <p class="text-gray-400 mt-4">
-
-        Generate scroll-stopping hooks for your videos.
-
-      </p>
-
-    </div>
-
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl">
-
-      <h3 class="text-2xl font-bold text-cyan-400">
-        🖼 Thumbnail Generator
-      </h3>
-
-      <p class="text-gray-400 mt-4">
-
-        Create powerful thumbnail ideas and prompts.
-
-      </p>
-
-    </div>
-
-  </section>
-<footer class="text-center text-gray-500 text-sm py-6">
-  Creator Hub © 2026 • Built by Vikram Suthar
-</footer>
 <div id="desktopPopup"
 class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
 
-  <div class="bg-slate-900 border border-violet-500 rounded-3xl p-8 max-w-sm text-center">
+<div class="bg-slate-900 border border-violet-500 rounded-3xl p-8 max-w-sm text-center">
 
+<h2 class="text-3xl font-bold text-violet-400">
+🚀 Creator Hub
+</h2>
 
-    <h2 class="text-3xl font-bold text-violet-400">
-      Creator Hub
-    </h2>
+<p class="text-gray-300 mt-4">
+Welcome to Creator Hub
+<br><br>
 
-    <p class="text-gray-300 mt-4">
-  🚀 Welcome to Creator Hub
-  <br><br>
+Create viral content with powerful AI tools.
+<br><br>
 
-  Create viral content with powerful AI tools.
-  <br><br>
-
-  For the best experience, Creator Hub works beautifully on both desktop and mobile.
+For the best experience, Creator Hub works beautifully on both desktop and mobile.
 </p>
 
-    <button
-      onclick="document.getElementById('desktopPopup').style.display='none'"
-      class="mt-6 bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 rounded-xl font-bold">
-      Continue
-    </button>
-
-  </div>
+<button
+onclick="closePopup()"
+class="mt-6 bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 rounded-xl font-bold">
+Continue
+</button>
 
 </div>
+
+</div>
+
+<!-- Logo -->
+
+<div class="text-center pt-10">
+
+<h1 class="text-5xl font-extrabold bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">
+Creator Hub
+</h1>
+
+</div>
+
+<!-- Hero -->
+
+<section class="text-center px-6 mt-24">
+
+<div class="mx-auto max-w-5xl">
+
+<h2 class="text-6xl md:text-7xl font-extrabold leading-tight">
+
+Build. Create.
+<br>
+Grow.
+<br>
+
+<span class="bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent">
+With Creator Hub AI
+</span>
+
+</h2>
+
+<p class="text-gray-400 text-xl mt-8 max-w-3xl mx-auto">
+
+Generate scripts, hooks, thumbnails and viral content ideas
+with powerful AI tools designed for creators.
+
+</p>
+
+<a href="signup.html">
+
+<button class="mt-10 px-10 py-5 rounded-2xl font-bold text-xl bg-gradient-to-r from-cyan-500 to-violet-600 glow">
+
+🚀 Get Started
+
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- Features -->
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-24 max-w-7xl mx-auto">
+
+<div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-cyan-400">
+🎬 Script Generator
+</h3>
+
+<p class="text-gray-400 mt-4">
+
+Generate engaging YouTube Shorts and long-form scripts instantly.
+
+</p>
+
+</div>
+
+<div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-violet-400">
+⚡ Hook Generator
+</h3>
+
+<p class="text-gray-400 mt-4">
+
+Create attention-grabbing hooks that stop viewers from scrolling.
+
+</p>
+
+</div>
+
+<div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:scale-105 transition">
+
+<h3 class="text-2xl font-bold text-fuchsia-400">
+🖼 Thumbnail Generator
+</h3>
+
+<p class="text-gray-400 mt-4">
+
+Get powerful thumbnail ideas and prompts to increase clicks.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="text-center text-gray-500 py-10">
+
+Creator Hub © 2026 • Built by Vikram Suthar
+
+</footer>
+
+<script>
+function closePopup(){
+document.getElementById("desktopPopup").style.display="none";
+localStorage.setItem("popupSeen","yes");
+}
+
+window.onload=function(){
+
+if(localStorage.getItem("popupSeen")==="yes"){
+document.getElementById("desktopPopup").style.display="none";
+}
+
+}
+</script>
+
 </body>
 </html>
