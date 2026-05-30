@@ -45,7 +45,6 @@ const scriptOutput =
 
 generateBtn.addEventListener("click", async () => {
 
-alert("Button clicked!");
   const topic = topicInput.value.trim();
 
   if (!topic) {
@@ -76,14 +75,21 @@ alert("Button clicked!");
 
     const data =
       await response.json();
+console.log(data);
 
+if (!response.ok) {
+  throw new Error(
+    data.error || "Server Error"
+  );
+}
     scriptOutput.innerText =
       data.result;
 
   } catch (error) {
 
+console.log(error);
     scriptOutput.innerText =
-      "Error connecting to AI.";
+  "Error: " + error.message;
 
   }
 
