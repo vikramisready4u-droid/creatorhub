@@ -27,7 +27,6 @@ import {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-alert("app.js loaded");
 
 // SIGNUP PAGE
 
