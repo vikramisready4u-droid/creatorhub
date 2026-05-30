@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Creator Hub</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-950 text-white">
+<body class="bg-slate-950 text-white" style="font-family:Poppins,sans-serif;">
 
   <!-- Navbar -->
 
@@ -69,7 +69,7 @@ With AI Power
 
     </div>
 
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl"">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl">
 
       <h3 class="text-2xl font-bold text-cyan-400">
         ⚡ Hook Generator
@@ -83,7 +83,7 @@ With AI Power
 
     </div>
 
-    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl"">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl">
 
       <h3 class="text-2xl font-bold text-cyan-400">
         🖼 Thumbnail Generator
@@ -101,5 +101,32 @@ With AI Power
 <footer class="text-center text-gray-500 text-sm py-6">
   Creator Hub © 2026 • Built by Vikram Suthar
 </footer>
+<div id="desktopPopup"
+class="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+
+  <div class="bg-slate-900 border border-violet-500 rounded-3xl p-8 max-w-sm text-center">
+
+
+    <h2 class="text-3xl font-bold text-violet-400">
+      Creator Hub
+    </h2>
+
+    <p class="text-gray-300 mt-4">
+      🚀 Welcome to Creator Hub
+
+Create viral content with powerful AI tools.
+
+For the best experience, Creator Hub works beautifully on both desktop and mobile.
+    </p>
+
+    <button
+      onclick="document.getElementById('desktopPopup').style.display='none'"
+      class="mt-6 bg-gradient-to-r from-violet-600 to-fuchsia-600 px-6 py-3 rounded-xl font-bold">
+      Continue
+    </button>
+
+  </div>
+
+</div>
 </body>
 </html>
