@@ -11,6 +11,18 @@
 
 <body class="bg-slate-950 text-white">
 
+<div id="loader"
+class="hidden fixed inset-0 bg-slate-950 z-[9999] flex flex-col justify-center items-center">
+
+  <h1 class="text-4xl font-bold bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+    Creator Hub
+  </h1>
+
+  <p class="mt-4 text-gray-400 animate-pulse">
+    Loading...
+  </p>
+
+</div>
 <button
 id="menuBtn"
 class="fixed top-4 left-4 z-50 bg-slate-800 px-3 py-2 rounded-xl">
@@ -34,7 +46,9 @@ class="fixed left-0 top-0 h-screen w-64 bg-slate-900 border-r border-slate-800 p
           Dashboard
         </a>
 
-        <a href="youtube.html" class="bg-gray-800 p-3 rounded-xl">
+        <a href="youtube.html"
+onclick="showLoader()"
+class="bg-gray-800 p-3 rounded-xl">
   🎬 YouTube Studio
 </a>
 
@@ -48,7 +62,9 @@ class="fixed left-0 top-0 h-screen w-64 bg-slate-900 border-r border-slate-800 p
 <hr class="border-slate-700 my-6">
       </div>
 
-      <a href="profile.html" class="bg-gray-800 p-3 rounded-xl">
+      <a href="profile.html"
+onclick="showLoader()"
+class="bg-gray-800 p-3 rounded-xl">
   👤 Profile
 </a>
 
@@ -84,6 +100,7 @@ Loading...
   <div class="grid grid-cols-1 gap-4">
 
     <a href="youtube.html"
+onclick="showLoader()"
 class="bg-slate-800 p-6 rounded-3xl">
       <h3 class="text-xl font-bold text-violet-400">
         🎬 YouTube Studio
@@ -159,6 +176,12 @@ document.addEventListener("DOMContentLoaded", () => {
     el.textContent = greeting;
   }
 });
+</script>
+<script>
+function showLoader() {
+  document.getElementById("loader")
+    .classList.remove("hidden");
+}
 </script>
 <script>
 const menuBtn =
