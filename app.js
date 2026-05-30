@@ -225,3 +225,6 @@ Follow for more creator tips.`;
   });
 
 }
+<footer class="text-center text-gray-500 text-sm py-6">
+  Creator Hub © 2026 • Built by Vikram Suthar
+</footer>
