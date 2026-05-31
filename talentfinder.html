@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Talent Finder</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family:'Poppins',sans-serif;
+background:#020617;
+}
+</style>
+
+</head>
+
+<body class="text-white p-6">
+
+<a href="dashboard.html"
+class="bg-slate-800 px-5 py-3 rounded-xl inline-block mb-8">
+← Dashboard
+</a>
+
+<div class="max-w-xl mx-auto">
+
+<h1 class="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
+🧠 Talent Finder
+</h1>
+
+<p class="text-center text-gray-400 mt-4">
+Discover your hidden strengths and career potential
+</p>
+
+<div class="bg-slate-900 mt-10 p-6 rounded-3xl">
+
+<label class="block mb-2">
+1. Do you enjoy solving difficult problems?
+</label>
+
+<select id="q1"
+class="w-full p-3 rounded-xl text-black">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label class="block mt-5 mb-2">
+2. Do you like leading people?
+</label>
+
+<select id="q2"
+class="w-full p-3 rounded-xl text-black">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label class="block mt-5 mb-2">
+3. Do you enjoy drawing or designing?
+</label>
+
+<select id="q3"
+class="w-full p-3 rounded-xl text-black">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label class="block mt-5 mb-2">
+4. Do you enjoy teaching others?
+</label>
+
+<select id="q4"
+class="w-full p-3 rounded-xl text-black">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<button
+onclick="findTalent()"
+class="w-full mt-8 bg-gradient-to-r from-cyan-500 to-violet-600 py-4 rounded-xl font-bold">
+
+Find My Talent
+
+</button>
+
+</div>
+
+<div id="result"
+class="hidden bg-slate-900 mt-8 p-6 rounded-3xl">
+
+<h2 class="text-2xl font-bold mb-4">
+🏆 Talent Report
+</h2>
+
+<div id="output"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function findTalent(){
+
+let engineer = 50;
+let leader = 50;
+let designer = 50;
+let teacher = 50;
+
+if(document.getElementById("q1").value==="Yes"){
+engineer += 35;
+}
+
+if(document.getElementById("q2").value==="Yes"){
+leader += 35;
+}
+
+if(document.getElementById("q3").value==="Yes"){
+designer += 35;
+}
+
+if(document.getElementById("q4").value==="Yes"){
+teacher += 35;
+}
+
+document.getElementById("result").classList.remove("hidden");
+
+document.getElementById("output").innerHTML=`
+
+<p>👨‍💻 Engineer: ${engineer}%</p>
+<p class="mt-2">👑 Leader: ${leader}%</p>
+<p class="mt-2">🎨 Designer: ${designer}%</p>
+<p class="mt-2">📚 Teacher: ${teacher}%</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
